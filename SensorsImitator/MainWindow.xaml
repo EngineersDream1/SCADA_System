@@ -1,0 +1,47 @@
+﻿<Window x:Class="SensorsImitator.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SensorsImitator"
+        mc:Ignorable="d"
+        Title="Sensors" Height="450" Width="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Image Grid.Column="0" Source="\Resourses\HeatExchanger.png"/>
+        <StackPanel Orientation="Vertical" HorizontalAlignment="Center" VerticalAlignment="Center" 
+                    Margin="10" Grid.Column="1">
+            <StackPanel Orientation="Horizontal" Margin="5">
+                <TextBlock FontSize="22" FontWeight="DemiBold" Text="Датчик температуры 3а: "/>
+                <TextBlock FontSize="22" FontWeight="DemiBold" Text=""/>
+                <TextBlock FontSize="22" FontWeight="DemiBold" Text=" °C"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Margin="5">
+                <TextBlock FontSize="22" FontWeight="DemiBold" Text="Датчик температуры 3б: "/>
+                <TextBlock FontSize="22" FontWeight="DemiBold" Text=""/>
+                <TextBlock FontSize="22" FontWeight="DemiBold" Text=" °C"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Margin="5">
+                <TextBlock FontSize="22" FontWeight="DemiBold" Text="Датчик температуры 5а: "/>
+                <TextBlock FontSize="22" FontWeight="DemiBold" Text=""/>
+                <TextBlock FontSize="22" FontWeight="DemiBold" Text=" °C"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Margin="5">
+                <TextBlock FontSize="22" FontWeight="DemiBold" Text="Расходомер 1а: "/>
+                <TextBlock FontSize="22" FontWeight="DemiBold" Text=""/>
+                <TextBlock FontSize="22" FontWeight="DemiBold" Text=" кг/с"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Margin="5">
+                <TextBlock FontSize="22" FontWeight="DemiBold" Text="Расходомер 4а: "/>
+                <TextBlock FontSize="22" FontWeight="DemiBold" Text=""/>
+                <TextBlock FontSize="22" FontWeight="DemiBold" Text=" кг/с"/>
+            </StackPanel>
+
+            <Button x:Name="Start" Content="Start" FontSize="28" FontWeight="DemiBold"
+                    Click="Start_Click" Margin="5"/>
+        </StackPanel>
+    </Grid>
+</Window>
