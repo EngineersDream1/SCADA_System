@@ -5,6 +5,8 @@ VisualStudioVersion = 17.4.33213.308
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SensorsImitator", "SensorsImitator\SensorsImitator.csproj", "{78A71426-54A5-4066-83E2-4E12F2D46345}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MonitoringDashboard", "MonitoringDashboard\MonitoringDashboard.csproj", "{D88A6089-BA20-4B85-8B52-9AB8FCBB7FD0}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{78A71426-54A5-4066-83E2-4E12F2D46345}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{78A71426-54A5-4066-83E2-4E12F2D46345}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{78A71426-54A5-4066-83E2-4E12F2D46345}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D88A6089-BA20-4B85-8B52-9AB8FCBB7FD0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D88A6089-BA20-4B85-8B52-9AB8FCBB7FD0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D88A6089-BA20-4B85-8B52-9AB8FCBB7FD0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D88A6089-BA20-4B85-8B52-9AB8FCBB7FD0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
