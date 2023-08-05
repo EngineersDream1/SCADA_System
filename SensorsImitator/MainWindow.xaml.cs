@@ -20,9 +20,16 @@ namespace SensorsImitator
     /// </summary>
     public partial class MainWindow : Window
     {
+        private Sensors _sensors = new Sensors();
         public MainWindow()
         {
             InitializeComponent();
+            DataContext = _sensors;
+        }
+
+        private async void Start_Click(object sender, RoutedEventArgs e)
+        {
+            await _sensors.AddValuesInLoop();
         }
     }
 }

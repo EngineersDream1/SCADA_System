@@ -6,6 +6,9 @@
         xmlns:local="clr-namespace:SensorsImitator"
         mc:Ignorable="d"
         Title="Sensors" Height="450" Width="800">
+    <Window.DataContext>
+        <local:Sensors/>
+    </Window.DataContext>
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
@@ -16,32 +19,32 @@
                     Margin="10" Grid.Column="1">
             <StackPanel Orientation="Horizontal" Margin="5">
                 <TextBlock FontSize="22" FontWeight="DemiBold" Text="Датчик температуры 3а: "/>
-                <TextBlock FontSize="22" FontWeight="DemiBold" Text=""/>
+                <TextBlock FontSize="22" FontWeight="DemiBold" Text="{Binding SecondTempValueIn}"/>
                 <TextBlock FontSize="22" FontWeight="DemiBold" Text=" °C"/>
             </StackPanel>
             <StackPanel Orientation="Horizontal" Margin="5">
                 <TextBlock FontSize="22" FontWeight="DemiBold" Text="Датчик температуры 3б: "/>
-                <TextBlock FontSize="22" FontWeight="DemiBold" Text=""/>
+                <TextBlock FontSize="22" FontWeight="DemiBold" Text="{Binding FirstTempValueIn}"/>
                 <TextBlock FontSize="22" FontWeight="DemiBold" Text=" °C"/>
             </StackPanel>
             <StackPanel Orientation="Horizontal" Margin="5">
                 <TextBlock FontSize="22" FontWeight="DemiBold" Text="Датчик температуры 5а: "/>
-                <TextBlock FontSize="22" FontWeight="DemiBold" Text=""/>
+                <TextBlock FontSize="22" FontWeight="DemiBold" Text="{Binding FirstTempValueOut}"/>
                 <TextBlock FontSize="22" FontWeight="DemiBold" Text=" °C"/>
             </StackPanel>
             <StackPanel Orientation="Horizontal" Margin="5">
                 <TextBlock FontSize="22" FontWeight="DemiBold" Text="Расходомер 1а: "/>
-                <TextBlock FontSize="22" FontWeight="DemiBold" Text=""/>
+                <TextBlock FontSize="22" FontWeight="DemiBold" Text="{Binding SecondFlowValue}"/>
                 <TextBlock FontSize="22" FontWeight="DemiBold" Text=" кг/с"/>
             </StackPanel>
             <StackPanel Orientation="Horizontal" Margin="5">
                 <TextBlock FontSize="22" FontWeight="DemiBold" Text="Расходомер 4а: "/>
-                <TextBlock FontSize="22" FontWeight="DemiBold" Text=""/>
+                <TextBlock FontSize="22" FontWeight="DemiBold" Text="{Binding FirstFlowValue}"/>
                 <TextBlock FontSize="22" FontWeight="DemiBold" Text=" кг/с"/>
             </StackPanel>
 
             <Button x:Name="Start" Content="Start" FontSize="28" FontWeight="DemiBold"
-                    Click="Start_Click" Margin="5"/>
+                    Margin="5" Click="Start_Click"/>
         </StackPanel>
     </Grid>
 </Window>
