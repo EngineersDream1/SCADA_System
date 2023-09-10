@@ -89,7 +89,7 @@ namespace SensorsImitator
 
         public Sensors()
         {
-            _client = new FirebaseClient("https://heatexchanger-ad719-default-rtdb.firebaseio.com/"); //Зздесь добавляется URL созданной базы данных Firebase
+            _client = new FirebaseClient("https://heatexchanger-ad719-default-rtdb.firebaseio.com/"); //Здесь добавляется URL созданной базы данных Firebase
             _random = new Random();
         }
 

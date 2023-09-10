@@ -3,9 +3,15 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:MonitoringDashboard"
+        xmlns:local="clr-namespace:MonitoringDashboard" 
+        xmlns:ScottPlot="clr-namespace:ScottPlot;assembly=ScottPlot.WPF" 
+        xmlns:viewmodels="clr-namespace:MonitoringDashboard.ViewModels"
         mc:Ignorable="d"
-        Title="Monitoring Dashboard" Height="800" Width="1200" ResizeMode="NoResize">
+        Title="Monitoring Dashboard" Height="800" Width="1200" ResizeMode="NoResize"
+        Icon="\Icons\monitoring.png">
+    <Window.DataContext>
+        <viewmodels:MainViewModel/>
+    </Window.DataContext>
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="600"/>
@@ -34,31 +40,31 @@
                 <Border BorderBrush="Black" BorderThickness="3.5">
                     <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="8">
                         <TextBlock Text="TE(3a):" FontSize="16" FontWeight="DemiBold" Margin="10 0 10 0"/>
-                        <TextBox x:Name="Temp3A" Width="60"  Text="" FontSize="16" FontWeight="DemiBold" 
-                             Margin="10 0 10 0" IsEnabled="False"/>
+                        <TextBox x:Name="Temp3A" Width="60"  Text="{Binding CurrentSensorsData.Temp2_In}" 
+                                 FontSize="16" FontWeight="DemiBold" Margin="10 0 10 0" IsEnabled="False"/>
                         <TextBlock Text="℃" FontSize="16" FontWeight="DemiBold" Margin="10 0 10 0"/>
 
                         <TextBlock Text="TE(3б):" FontSize="16" FontWeight="DemiBold" Margin="10 0 10 0"/>
-                        <TextBox x:Name="Temp3B" Width="60"  Text="" FontSize="16" FontWeight="DemiBold" 
-                             Margin="10 0 10 0" IsEnabled="False"/>
+                        <TextBox x:Name="Temp3B" Width="60"  Text="{Binding CurrentSensorsData.Temp1_In}" 
+                                 FontSize="16" FontWeight="DemiBold" Margin="10 0 10 0" IsEnabled="False" />
                         <TextBlock Text="℃" FontSize="16" FontWeight="DemiBold" Margin="10 0 10 0"/>
 
                         <TextBlock Text="TE(5а):" FontSize="16" FontWeight="DemiBold" Margin="10 0 10 0"/>
-                        <TextBox x:Name="Temp5A" Width="60"  Text="" FontSize="16" FontWeight="DemiBold" 
-                             Margin="10 0 10 0" IsEnabled="False"/>
+                        <TextBox x:Name="Temp5A" Width="60"  Text="{Binding CurrentSensorsData.Temp1_Out}" 
+                                 FontSize="16" FontWeight="DemiBold" Margin="10 0 10 0" IsEnabled="False"/>
                         <TextBlock Text="℃" FontSize="16" FontWeight="DemiBold" Margin="10 0 10 0"/>
                     </StackPanel>
                 </Border>
                 <Border BorderBrush="Black" BorderThickness="3.5">
                     <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="8">
                         <TextBlock Text="FE(1a):" FontSize="16" FontWeight="DemiBold" Margin="10 0 10 0"/>
-                        <TextBox x:Name="Flow1A" Width="60"  Text="" FontSize="16" FontWeight="DemiBold" 
-                             Margin="10 0 10 0" IsEnabled="False"/>
+                        <TextBox x:Name="Flow1A" Width="60"  Text="{Binding CurrentSensorsData.Flow2}" 
+                                 FontSize="16" FontWeight="DemiBold" Margin="10 0 10 0" IsEnabled="False"/>
                         <TextBlock Text="кг/с" FontSize="16" FontWeight="DemiBold" Margin="10 0 10 0"/>
 
                         <TextBlock Text="FT(4a):" FontSize="16" FontWeight="DemiBold" Margin="10 0 10 0"/>
-                        <TextBox x:Name="Flow4A" Width="60"  Text="" FontSize="16" FontWeight="DemiBold" 
-                             Margin="10 0 10 0" IsEnabled="False"/>
+                        <TextBox x:Name="Flow4A" Width="60"  Text="{Binding CurrentSensorsData.Flow1}" 
+                                 FontSize="16" FontWeight="DemiBold" Margin="10 0 10 0" IsEnabled="False"/>
                         <TextBlock Text="кг/с" FontSize="16" FontWeight="DemiBold" Margin="10 0 10 0"/>
 
                     </StackPanel>
@@ -67,13 +73,13 @@
         </Border>
 
         <Border BorderBrush="Black" BorderThickness="3.5" Grid.Column="1" Grid.ColumnSpan="2">
-
+            <ScottPlot:WpfPlot x:Name="wpfPlot1" Height="480" Width="480"/>
         </Border>
 
         <Border BorderBrush="Black" BorderThickness="3.5" Grid.Column="1" Grid.ColumnSpan="2"
                 Grid.Row="1" Grid.RowSpan="2">
-            <DataGrid x:Name="sensorsData" Margin="5">
-
+            <DataGrid x:Name="sensorsData" Margin="5" ItemsSource="{Binding Sensors}">
+                
             </DataGrid>
         </Border>
     </Grid>

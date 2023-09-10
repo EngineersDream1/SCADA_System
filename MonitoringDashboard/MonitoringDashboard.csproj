@@ -8,10 +8,19 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Remove="Source\HeatExchanger.png" />
+    <None Remove="Icons\monitoring.png" />
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="FirebaseDatabase.net" Version="4.2.0" />
+    <PackageReference Include="ScottPlot" Version="4.1.67" />
+    <PackageReference Include="ScottPlot.WPF" Version="4.1.67" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Icons\monitoring.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
     <Resource Include="Source\HeatExchanger.png">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </Resource>
